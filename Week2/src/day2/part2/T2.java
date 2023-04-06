@@ -1,6 +1,4 @@
-package day2;
-
-import java.util.Arrays;
+package day2.part2;
 
 /**
  * ccb
@@ -15,12 +13,10 @@ public class T2 {
     public static void input(String a) {
         String[] strList = a.split("/");
 //        System.out.println(Arrays.toString(strList));
-        if (a.contains(".")) {
+        if (strList[strList.length-1].contains(".")) {
             String requestName = strList[strList.length - 1];
-            int index = requestName.indexOf(".");
-            requestName = requestName.substring(0, index);
+            requestName = requestName.substring(0,requestName.indexOf("."));
             System.out.println("请求名字：" + requestName);
-            char[] requestNameStr = requestName.toCharArray();
             if (requestName.contains("aaa")) {
                 System.out.println("请求名字中出现连续3个a字符组合");
             } else System.out.println("请求名字中未出现连续3个a字符组合");
