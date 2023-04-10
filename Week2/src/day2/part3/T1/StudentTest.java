@@ -10,5 +10,7 @@ public class StudentTest {
         student.setStuNo("01");
         student.setStuAge(23);
         System.out.println(student.toString());
+        Student student1 = new Student("bbc","02",20);
+        System.out.println(student1.toString());
     }
 }

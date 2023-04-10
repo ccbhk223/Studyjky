@@ -21,7 +21,7 @@ public class Teacher {
                 '}';
     }
 
-    public Teacher(String TID, String TName, String TSex, int TAge, Course TSubject) {
+    public Teacher(String TID, String TName, String TSex, int TAge,Course TSubject) {
         this.TID = TID;
         this.TName = TName;
         this.TSex = TSex;

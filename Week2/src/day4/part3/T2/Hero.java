@@ -1,5 +1,8 @@
 package day4.part3.T2;
 
+import java.util.Arrays;
+import java.util.Random;
+
 /**
  * ccb
  **/

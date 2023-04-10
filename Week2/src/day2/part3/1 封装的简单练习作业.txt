@@ -1,0 +1,6 @@
+1 封装Student类，成员变量private String stuName;private String stuNo;private int stuAge;编写setget方法；封装StudentTest完成实例化1个学生对象，并且同时完成给成员变量赋值；最后打印学生对象的成员变量值
+
+2 封装Account类，成员变量private String accountName;private String accountId;
+编写setget方法；同时自定义方法1完成实例化2个Student对象并且完成打印2个学生的姓名信息；自定义方法2完成给任意学生的姓名修改姓名信息（即删除姓名中所有的数字）；自定义方法3完成返回本Account类的信息；封装AccountTest测试Account中方法
+
+3 封装Animal类，成员变量private String aniName;private int aniAge;为其编写setget方法；以及无参数构造器和有参数构造器完成给2个成员变量赋值；最后封装AnimalTest完成分别使用无参构造器和有参数构造器分别实例化Animal对象，并且打印对象的属性信息

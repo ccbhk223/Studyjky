@@ -19,6 +19,7 @@ public class Course {
                 '}';
     }
 
+
     public Course(String SNo, String SName, String SFoundTime, String SDescribe) {
         this.SNo = SNo;
         this.SName = SName;
