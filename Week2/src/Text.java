@@ -8,6 +8,8 @@ import java.util.Arrays;
 public class Text {
     public static void main(String[] args) {
         String a = "890766a2";
-        System.out.println("123");
+    }
+    public void greet(String m){
+        if(m!=null) System.out.println("11");
     }
 }

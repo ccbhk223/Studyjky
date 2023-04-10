@@ -6,11 +6,15 @@ package day2.part3.T2;
 public class Account {
     private String accountName;
     private String accountId;
-    public Account(){}
+
+    public Account() {
+    }
+
     public void setAccountName(String accountName) {
         this.accountName = accountName;
     }
-    public void setAccountId(String accountId){
+
+    public void setAccountId(String accountId) {
         this.accountId = accountId;
     }
 
@@ -22,17 +26,26 @@ public class Account {
         return accountId;
     }
 
-    public Account(String accountName, String accountId){
+    public Account(String accountName, String accountId) {
         this.accountName = accountName;
         this.accountId = accountId;
-        System.out.println("姓名："+accountName+" ID:"+accountId);
+//        System.out.println("姓名：" + accountName + " ID:" + accountId);
     }
-    public void delNum(){
-        char[] str = this.accountName.toCharArray();
-        for (int i = 0; i < str.length; i++) {
-            if (str[i]>='0'&&str[i]<='9') accountName =accountName.replace(str[i]+"","");
+
+    public void delNum(Account account) {
+        char[] str = account.getAccountName().toCharArray();
+        for (char c : str) {
+            if (c >= '0' && c <= '9') accountName = accountName.replace(c + "", "");
         }
-        this.accountName =accountName;
+//        account.setAccountName(accountName) ;
 //        System.out.println(accountName);
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "accountName='" + accountName + '\'' +
+                ", accountId='" + accountId + '\'' +
+                '}';
     }
 }
