@@ -1,0 +1,24 @@
+1. Object中的方法：
+a. getClass() - 用在反射的场景
+b. int hashCode() - 为对象生成编码 （对象的身份证号）
+c. boolean equals(Object obj) - 用于对象间的判等。
+d. Object clone() - 把对象内容拷贝一遍，生成一个新的对象。
+e. String toString() - 把对象转换为字符串
+f. void notify() void notifyAll() wait()系列 多线程相关
+g. void finalize()资源释放相关，不用我们手动去调用
+2. Objects中的方法：
+a. boolean equals(Object a, Object b)
+b. boolean deepEquals(Object a, Object b)
+c. int hashCode(Object o)
+d. int hash(Object[] values)
+e. String toString(Object o)
+f. String toString(Object o, String nullDefault)
+g. boolean isNull(Object obj)
+h. boolean nonNull(Object obj)
+3. 日期相关的类型
+a. Date 用于日期的存储  存储规则 new Date() new Date(ms) getTime()
+b. DateFormat 用于日期的格式化  转换规则yMdHhmsS  parse format
+c. Calendar 用于日期的计算 getInstance  add set get setTime getTime
+4. Math/Random
+a. max min floor tail round random PI E  
+b. new Random(seed)
