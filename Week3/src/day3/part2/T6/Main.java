@@ -19,17 +19,14 @@ public class Main {
         Sex sex = Sex.male;
         Sex sex1 = Sex.female;
         Calendar birthday = Calendar.getInstance();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        //        Person person = new Person("ccb","0315",birthday,sex);
-//        System.out.println(person);
-        while (true) {
+        while (true) {//全部输入成功才能退出循环
             System.out.println("请输入姓名：");
             String name = sc.next();
-            if (!isFormatName(name)) {
+            if (!isFormatName(name)) {//判断姓名格式
                 System.out.println("——————————————————————");
                 System.out.println("请输入身份证号码：");
                 String personID = sc.next();
-                if (!isFormatPersonID(personID)) {
+                if (!isFormatPersonID(personID)) {//判断身份证格式
                     System.out.println("——————————————————————");
                     System.out.println("请输入出生日期：");
                     System.out.println("出生年份：");
@@ -38,13 +35,13 @@ public class Main {
                     int birthMonth = sc.nextInt();
                     System.out.println("出生日：");
                     int birthDay = sc.nextInt();
-                    if (isFormatBirth(birthYear,birthMonth,birthDay)) {
+                    if (isFormatBirth(birthYear,birthMonth,birthDay)) {//判断出生日期格式
                         birthday.set(birthYear, birthMonth, birthDay);
                         birthday.add(Calendar.MONTH, -1);
                         System.out.println("——————————————————————");
                         System.out.println("请输入性别：（0/1）");
                         int gender = sc.nextInt();
-                        if (gender == 0) {
+                        if (gender == 0) {//判断性别
                             Person person = new Person(name, personID, birthday, sex);
                             System.out.println(person);
                             break;
@@ -63,20 +60,20 @@ public class Main {
         }
 
     }
-
-    public static boolean isFormatName(String name) {//出现数字返回true
+    //出现数字返回true
+    public static boolean isFormatName(String name) {
         Pattern pattern = Pattern.compile("[\\d]+");
         Matcher matcher = pattern.matcher(name);
         return matcher.find();
     }
-
-    public static boolean isFormatPersonID(String personID) {//出现不是字母或者数字的字符返回t
+    //出现不是字母或者数字的字符返回t
+    public static boolean isFormatPersonID(String personID) {
         Pattern pattern = Pattern.compile("[^\\da-zA-Z]+");
         Matcher matcher = pattern.matcher(personID);
         return matcher.find();
     }
-
-    public static boolean isFormatBirth(int year, int month, int day) {//出现不是数字的字符返回true
+    //出现不是数字的字符且出生日期比当前日期小返回true
+    public static boolean isFormatBirth(int year, int month, int day) {
         String y = year + "";
         String m = month + "";
         String d = day + "";
