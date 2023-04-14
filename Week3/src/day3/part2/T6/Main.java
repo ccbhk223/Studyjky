@@ -38,9 +38,9 @@ public class Main {
                     int birthMonth = sc.nextInt();
                     System.out.println("出生日：");
                     int birthDay = sc.nextInt();
-                    birthday.set(birthYear, birthMonth, birthDay);
-                    birthday.add(Calendar.MONTH, -1);
-                    if (!(isFormatBirth(birthDay) || isFormatBirth(birthMonth) || isFormatBirth(birthYear))) {
+                    if (isFormatBirth(birthYear,birthMonth,birthDay)) {
+                        birthday.set(birthYear, birthMonth, birthDay);
+                        birthday.add(Calendar.MONTH, -1);
                         System.out.println("——————————————————————");
                         System.out.println("请输入性别：（0/1）");
                         int gender = sc.nextInt();
@@ -55,7 +55,9 @@ public class Main {
                         } else {
                             System.out.println("性别格式输入错误");
                         }
-                    } else {System.out.println("出生日期输入错误");}
+                    } else {
+                        System.out.println("出生日期输入错误");
+                    }
                 } else System.out.println("身份证号码格式输入错误");
             } else System.out.println("姓名格式输入错误");
         }
@@ -74,10 +76,21 @@ public class Main {
         return matcher.find();
     }
 
-    public static boolean isFormatBirth(int number) {//出现不是数字的字符返回true
-        String a = number + "";
+    public static boolean isFormatBirth(int year, int month, int day) {//出现不是数字的字符返回true
+        String y = year + "";
+        String m = month + "";
+        String d = day + "";
         Pattern pattern = Pattern.compile("[^\\d]+");
-        Matcher matcher = pattern.matcher(a);
-        return matcher.find();
+        Matcher matcher = pattern.matcher(y);
+        Matcher matcher1 = pattern.matcher(m);
+        Matcher matcher2 = pattern.matcher(d);
+        if (!(matcher.find() || matcher1.find() || matcher2.find())) {//如果年月日都是数字
+            Calendar birthday = Calendar.getInstance();
+            Calendar nowDay = Calendar.getInstance();
+            birthday.set(year, month, day);
+            birthday.add(Calendar.MONTH, -1);
+            return birthday.compareTo(nowDay) < 0;//出生日期比当前日期小返回t
+        }
+        return false;
     }
 }
