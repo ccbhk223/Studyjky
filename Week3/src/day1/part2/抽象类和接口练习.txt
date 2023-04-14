@@ -1,0 +1,11 @@
+1 封装抽象类A,里面定义抽象方法out和out1;编写实现子类实现out和out1的打印操作最后实例化A测试
+
+
+2 封装接口Service,里面定义print和print1编写实现子类Dao实现print和print1最后实例化接口测试
+
+
+3 将1-100用定时器打印出来，1秒一个数字：  使用Timer的schedule(TimerTask task, long delay, long period)？？？
+
+4 在课上代码基础上完成StudentController中的所有方法调用，更新学生和查找学生的方法实现选做完成
+
+5 独立完成单例模式的2种代码实现编写
